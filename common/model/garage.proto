@@ -33,6 +33,8 @@ message GarageAndUserId {
 }
 
 service Garages {
-    rpc List(GarageUserId) returns (GarageList) {}
     rpc Add(GarageAndUserId) returns (google.protobuf.Empty) {}
+    rpc Register(Garage) returns (google.protobuf.Empty) {}
+    rpc ListAllGarage(google.protobuf.Empty) returns (GarageList) {}
+    rpc List(GarageUserId) returns (GarageList) {}
 }

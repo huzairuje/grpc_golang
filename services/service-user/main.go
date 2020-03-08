@@ -21,9 +21,7 @@ type UsersServer struct{}
 
 func (UsersServer) Register(ctx context.Context, param *model.User) (*empty.Empty, error) {
 	localStorage.List = append(localStorage.List, param)
-
 	log.Println("Registering user", param.String())
-
 	return new(empty.Empty), nil
 }
 
